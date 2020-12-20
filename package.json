@@ -1,0 +1,15 @@
+{
+  "name": "ts-node-starter-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "tsc-watch --onSuccess \"node ./dist/server.js\""
+  },
+  "author": "Evidence Rex Osikhena",
+  "license": "MIT",
+  "dependencies": {
+    "tsc-watch": "^4.2.9",
+    "typescript": "^4.1.3"
+  }
+}
