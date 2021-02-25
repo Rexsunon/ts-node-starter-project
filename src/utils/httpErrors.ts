@@ -16,7 +16,9 @@ export abstract class HTTPClientError extends Error {
 export class HTTP400Error extends HTTPClientError {
   readonly statusCode = 400;
 
-  constructor(message: string | object = 'Bad Request') {
+  constructor(
+    message: string | object = { success: false, message: 'Bad Request' }
+  ) {
     super(message);
   }
 }
@@ -24,7 +26,9 @@ export class HTTP400Error extends HTTPClientError {
 export class HTTP401Error extends HTTPClientError {
   readonly statusCode = 401;
 
-  constructor(message: string | object = 'Unauthorized') {
+  constructor(
+    message: string | object = { success: false, message: 'Unauthorized' }
+  ) {
     super(message);
   }
 }
@@ -32,7 +36,9 @@ export class HTTP401Error extends HTTPClientError {
 export class HTTP403Error extends HTTPClientError {
   readonly statusCode = 403;
 
-  constructor(message: string | object = 'Forbidden') {
+  constructor(
+    message: string | object = { success: false, message: 'Forbidden' }
+  ) {
     super(message);
   }
 }
@@ -40,7 +46,9 @@ export class HTTP403Error extends HTTPClientError {
 export class HTTP404Error extends HTTPClientError {
   readonly statusCode = 404;
 
-  constructor(message: string | object = 'Not found') {
+  constructor(
+    message: string | object = { success: false, message: 'Not found' }
+  ) {
     super(message);
   }
 }
