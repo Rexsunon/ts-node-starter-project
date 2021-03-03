@@ -4,7 +4,7 @@ import 'express-async-errors';
 import { applyMiddleware, applyRoutes } from './utils';
 import middleware from './middleware';
 import errorHandlers from './middleware/errorHandlers';
-// import routes from './services';
+import routes from './services';
 
 process.on('uncaughtException', (e) => {
   console.log('uncaughtException!', e);
@@ -19,6 +19,7 @@ process.on('unhandledRejection', (e) => {
 const router = express();
 applyMiddleware(middleware, router);
 // applyRoutes(routes, router);
+router.use(routes);
 applyMiddleware(errorHandlers, router);
 
 const { PORT = 3000 } = process.env;
