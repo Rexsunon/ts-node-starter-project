@@ -8,6 +8,7 @@ import {
 
 import { handleAPIDocs } from './apiDocs';
 import { handelLogging } from './logging';
+import { handleHTTPHeaders, handleRateLimit } from './security';
 
 export default [
   handleCors,
@@ -17,4 +18,6 @@ export default [
   handleStatic,
   handleAPIDocs,
   handelLogging,
+  handleHTTPHeaders,
+  handleRateLimit,
 ];
