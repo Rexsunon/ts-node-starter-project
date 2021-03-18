@@ -1,4 +1,4 @@
-import { ConnectionOptions } from 'typeorm';
+import { Connection, ConnectionOptions, createConnection } from 'typeorm';
 
 export default class DbConfig {
   /**
@@ -34,5 +34,29 @@ export default class DbConfig {
     };
 
     return config;
+  }
+
+  /**
+   * NoSqlDbConnection
+   *
+   * @param type
+   * @param host
+   * @param port
+   * @param database
+   */
+  public async NoSqlDbConnection(
+    type: string,
+    host: string,
+    port: number,
+    database: string
+  ) {
+    const connection: Connection = await createConnection({
+      type: 'mongodb',
+      host: 'localhost',
+      port: 27017,
+      database: 'test',
+    });
+
+    return connection;
   }
 }
