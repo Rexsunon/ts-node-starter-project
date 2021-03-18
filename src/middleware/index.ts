@@ -7,6 +7,7 @@ import {
 } from './common';
 
 import { handleAPIDocs } from './apiDocs';
+import { handelLogging } from './logging';
 
 export default [
   handleCors,
@@ -15,4 +16,5 @@ export default [
   handleMorgan,
   handleStatic,
   handleAPIDocs,
+  handelLogging,
 ];
